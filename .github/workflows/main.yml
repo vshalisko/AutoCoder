@@ -12,3 +12,9 @@ jobs:
         run: echo "Hello" > hello.txt
       - name: Show me the answer
         run: cat hello.txt from.txt
+  external-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: abystoma/external-workflow@branch
+      - name: Greetings
+        run: echo "$(<greetings.txt)"
